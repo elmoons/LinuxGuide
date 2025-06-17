@@ -126,6 +126,12 @@ mkdir -p linux_project/{docs,scripts,backup}
 cd linux_project
 touch docs/{notes.txt,readme.md}
 ```
+mkdir -p linux_project/{docs,scripts,backup} - создает сразу 3 директории. Равносильно этому:
+```bash
+mkdir -p linux_project/docs
+mkdir -p linux_project/scripts
+mkdir -p linux_project/backup
+```
 
 ### **Задание 2: Работа с файлами**
 ```bash
