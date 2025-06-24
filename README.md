@@ -108,10 +108,10 @@ sudo apt update && sudo apt upgrade -y
 
 ### **Поиск**
 
-| Команда | Описание | Пример |
-|---------|----------|--------|
-| `grep`  | Поиск текста в файлах | `grep "error" log.txt` |
-| `find`  | Поиск файлов и директорий по расширению | `find /home -name "*.txt"` |
+| Команда | Описание | Примеры |
+|---------|----------|---------|
+| `grep` | Поиск текста в файлах | `grep "error" log.txt` |
+| `find` | Поиск файлов/директорий | `find /home -type f -name "config.txt"`<br>`find /projects -type d -name "node_modules"` |
 
 **Полезные флаги:**
 - `-r` - рекурсивно (для cp/rm)
