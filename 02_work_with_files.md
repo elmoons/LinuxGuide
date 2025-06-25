@@ -31,32 +31,49 @@ mkdir "My Documents"
 cp document.txt document_backup.txt
 
 # Задание 3.2: Скопировать файл в директорию
-cp document.txt ~/Notes/
+cp document.txt my_project
+cd my_project
+ls -al
+cd ..
 
 # Задание 3.3: Рекурсивное копирование директории
-cp -r old_project/ new_project/
+cp -r my_project/ new_my_project/
+cd new_my_project
+ls -al
+cd ..
 ```
 
 #### **4. Команда `mv`**
 ```bash
 # Задание 4.1: Переименовать файл
 mv document.txt new_document.txt
+ls
 
 # Задание 4.2: Переместить файл в другую директорию
-mv document.txt ~/Documents/
+mv new_document.txt project
+cd project
+ls
 ```
 
 #### **5. Команда `rm`**
 ```bash
 # Задание 5.1: Удалить файл
-rm document.txt
+rm new_document.txt
+ls
+cd ..
 
 # Задание 5.2: Удалить пустую директорию
-rmdir "My Documents"/
+ls
+rmdir "My Documents"
+ls
 ```
 
 #### **Комбинированные задания**
 ```bash
 # Задание 6.1: Создать структуру проекта
 mkdir -p website/{css,js,images} && touch website/index.html
+ls
+cd website
+ls
+cd ..
 ```

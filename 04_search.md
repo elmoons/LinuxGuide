@@ -3,25 +3,29 @@
 #### 1. Базовый поиск текста (`grep`)
 ```bash
 # Задание 1.1: Найти слово "error" в файле
-grep "error" /var/log/syslog
+grep "заметки" notes.txt
 
 # Задание 1.2: Поиск без учета регистра
-grep -i "warning" /var/log/syslog
+grep -i "ЗаМЕтКи" notes.txt
 
-# Задание 1.3: Инвертированный поиск (строки БЕЗ совпадения)
-grep -v "success" app.log
+# Задание 1.3: Инвертированный поиск (строки которые НЕ содержат)
+grep -v "записки" notes.txt
 ```
 
 #### 2. Рекурсивный поиск (`grep -r`)
 ```bash
-# Задание 2.1: Найти все вхождения "main()" в файлах проекта
-grep -r "main()" ~/projects/
+# Задание 2.1: Найти все вхождения "" в файлах проекта
+mkdir test
+cd test
+touch {test1.txt,test2.txt,test3.txt}
 
-# Задание 2.2: Поиск по шаблону в текущей директории
-grep -r -i "todo" .
+echo "Hello" > test1.txt
+echo "World" > test2.txt
+echo "Hello World" > test3.txt
 
-# Задание 2.3: Исключить строки с комментариями
-grep -r "function" src/ | grep -v "//"
+cd ~
+
+grep -r "Hello" ~/test
 ```
 
 #### 3. Поиск файлов (`find`)
@@ -29,18 +33,6 @@ grep -r "function" src/ | grep -v "//"
 # Задание 3.1: Найти все .txt файлы в домашней директории
 find ~ -type f -name "*.txt"
 
-# Задание 3.2: Найти директории с именем "config"
-find / -type d -name "config" 2>/dev/null
-
-# Задание 3.3: Найти и удалить временные файлы
-find /tmp -name "*.tmp" -delete
-```
-
-#### 4. Комбинированные задания
-```bash
-# Задание 4.1: Найти все Python-файлы содержащие "import os"
-find ~/code/ -name "*.py" -exec grep -l "import os" {} \;
-
-# Задание 4.2: Найти большие лог-файлы (>100MB) и проверить на ошибки
-find /var/log -size +100M -exec grep -i "error" {} \;
+# Задание 3.2: Найти директории с именем "test" в домашней директории
+find ~ -type d -name "test"
 ```
